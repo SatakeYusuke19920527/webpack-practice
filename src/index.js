@@ -1,4 +1,5 @@
-import _ from 'lodash'
+import _ from 'lodash';
+import style from './style.css';
 
 function component() {
     const element = document.createElement('div')
@@ -8,3 +9,4 @@ function component() {
 }
 
 document.body.appendChild(component())
+document.body.classList.add("haikei")

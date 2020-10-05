@@ -7,6 +7,17 @@ module.exports = {
         path: outputPath,
         filename: 'bundle.js'
     },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            }
+        ]
+    },
     devServer: {
         contentBase: outputPath,
     },
