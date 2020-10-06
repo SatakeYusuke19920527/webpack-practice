@@ -4,6 +4,7 @@
 - TypeScript
 - Webpack
 - eslint
+    > npx eslint [.tsxファイル名] --fix
 ### loader
 - css-loader
 - style-loader
