@@ -6,7 +6,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     output: {
         path: outputPath,
         filename: 'bundle.js',
@@ -37,6 +37,9 @@ module.exports = {
                 use: { loader: "babel-loader" }
             }
         ],
+    },
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".json", "scss", "css"]
     },
     devServer: {
         contentBase: outputPath,
