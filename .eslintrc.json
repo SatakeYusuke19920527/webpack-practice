@@ -41,6 +41,7 @@
                 ]
             }
         ],
+        "no-console": "off",
         "react/prop-types": "off",
         "import/no-unresolved": "off",
         "no-use-before-define": "off",
