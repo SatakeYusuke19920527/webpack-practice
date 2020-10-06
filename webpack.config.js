@@ -14,6 +14,12 @@ module.exports = {
     module: {
         rules: [
             {
+                enforce: "pre",
+                test: /\.(jsx?|tsx?)$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader"
+            },
+            {
                 test: /\.(sc|c)ss$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
