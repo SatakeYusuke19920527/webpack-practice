@@ -15,8 +15,12 @@
     > airbnb type
 ### plugin
 - html-webpack-plugin
+    > HTMLファイルのbundle
 - mini-css-extract-plugin
+    > css,scssファイルのbundle
 - uglifyjs-webpack-plugin
+    > console.logの自動削除
 - optimize-css-assets-webpack-plugin
+    > css,scssファイルのbundle
 ### devtool
 - source map
