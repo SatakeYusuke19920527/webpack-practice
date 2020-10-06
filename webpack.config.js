@@ -3,6 +3,7 @@ const outputPath = path.resolve(__dirname, 'dist');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -20,7 +21,7 @@ module.exports = {
                 test: /\.(jpe?g|png|gif|gif|svg|ico)$/,
                 loader: 'url-loader',
                 options: {
-                    limit: 2048,
+                    limit: 4096,
                     name: './images/[name].[ext]',
                 },
             },
@@ -44,12 +45,15 @@ module.exports = {
         })
     ],
     optimization: {
-        minimizer: [new UglifyJsPlugin({
-            uglifyOptions: {
-                compress: {
-                    drop_console: true,
+        minimizer: [
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    compress: {
+                        drop_console: true,
+                    }
                 }
-            }
-        })],
+            }),
+            new OptimizeCSSAssetsPlugin({})
+        ],
     },
 };
